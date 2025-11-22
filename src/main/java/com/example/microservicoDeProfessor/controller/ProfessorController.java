@@ -44,4 +44,9 @@ public class ProfessorController {
     public ResponseEntity<List<Professor>> findAll() {
         return ResponseEntity.ok(professorService.findAll());
     }
+
+    @GetMapping("/exists/{id}")
+    public Boolean existsId(@PathVariable Long id) {
+        return professorService.existsId(id);
+    }
 }
