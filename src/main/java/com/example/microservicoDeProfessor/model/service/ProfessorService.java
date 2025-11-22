@@ -50,4 +50,8 @@ public class ProfessorService {
     public List<Professor> findAll() {
         return professorRepository.findAll();
     }
+
+    public boolean existsId(Long id) {
+        return professorRepository.existsById(id);
+    }
 }
