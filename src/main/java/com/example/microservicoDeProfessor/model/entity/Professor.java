@@ -8,9 +8,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Getter @Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@Getter
+@Setter
 @Table(name = "tb_professores")
 public class Professor {
 
@@ -23,6 +22,10 @@ public class Professor {
 
     @Column(nullable = false)
     private String escola;
+
+    public Professor() {
+
+    }
 
     public Professor(ProfessorDTO dto) {
         this.id = dto.id();
