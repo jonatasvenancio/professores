@@ -16,8 +16,8 @@ public class ResourceExceptionHandler {
             Integer status,
             String error,
             String message,
-            String path
-    ) {}
+            String path) {
+    }
 
     @ExceptionHandler(RecursoNaoEncontradoException.class)
     public ResponseEntity<StandardError> naoEncontrado(RecursoNaoEncontradoException e, HttpServletRequest request) {
@@ -26,8 +26,7 @@ public class ResourceExceptionHandler {
                 HttpStatus.NOT_FOUND.value(),
                 "Recurso não encontrado",
                 e.getMessage(),
-                request.getRequestURI()
-        );
+                request.getRequestURI());
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(err);
     }
 }
